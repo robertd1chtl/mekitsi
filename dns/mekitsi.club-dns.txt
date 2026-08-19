@@ -1,0 +1,20 @@
+;; Zone file for mekitsi.club
+;; GitHub Pages configuration for robertd1chtl/mekitsi
+;; Import at: Cloudflare dashboard > mekitsi.club > DNS > Records > Import and Export > Import
+;; IMPORTANT: leave "Proxy imported DNS records" UNCHECKED. All records must stay DNS only (grey cloud)
+;; or GitHub cannot issue the HTTPS certificate.
+
+;; A records (apex) -> GitHub Pages IPv4
+mekitsi.club.	1	IN	A	185.199.108.153
+mekitsi.club.	1	IN	A	185.199.109.153
+mekitsi.club.	1	IN	A	185.199.110.153
+mekitsi.club.	1	IN	A	185.199.111.153
+
+;; AAAA records (apex) -> GitHub Pages IPv6
+mekitsi.club.	1	IN	AAAA	2606:50c0:8000::153
+mekitsi.club.	1	IN	AAAA	2606:50c0:8001::153
+mekitsi.club.	1	IN	AAAA	2606:50c0:8002::153
+mekitsi.club.	1	IN	AAAA	2606:50c0:8003::153
+
+;; CNAME for www -> GitHub Pages default domain
+www.mekitsi.club.	1	IN	CNAME	robertd1chtl.github.io.
