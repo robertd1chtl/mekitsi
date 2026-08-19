@@ -693,6 +693,54 @@ footer{padding:100px 30px 50px;text-align:center}
 
 
 
+
+<style id="mobile-fixes">
+/* Mobile layout fixes: hero wordmark overflow, colliding hero notes, grid overflow, vertical rhythm */
+@media (max-width:760px){
+  html{overflow-x:hidden}
+
+  .hero{
+    min-height:70svh;
+    padding:56px 20px 64px;
+    justify-content:center;
+    gap:0;
+  }
+
+  .wordmark{width:100%;max-width:100%}
+
+  .split-wordmark{
+    font-size:clamp(26px,6.6vw,42px) !important;
+    letter-spacing:.03em !important;
+  }
+  .split-wordmark .word-half:first-child{margin-right:-.5em !important}
+  .split-wordmark .word-half:last-child{margin-left:-.5em !important}
+
+  .mekitsa-divider{
+    width:clamp(130px,32vw,190px) !important;
+    height:auto !important;
+  }
+
+  .pop{margin-top:28px;font-size:13px;letter-spacing:.26em}
+
+  /* the two footnotes were absolutely positioned bottom-left and bottom-right
+     and overlapped each other on narrow screens. stack them in normal flow. */
+  .hero-note,.hero-date{
+    position:static;
+    left:auto;right:auto;bottom:auto;
+    text-align:center;
+    max-width:30ch;
+  }
+  .hero-note{margin-top:52px;font-size:13px;line-height:1.5}
+  .hero-date{margin-top:14px}
+
+  /* single-column grids default to minmax(auto,1fr), which refuses to shrink
+     below the widest child and pushed content past the viewport at 320px */
+  .wine-story,.info,.menu-head,.goodies-grid,.hosts,.host-grid{
+    grid-template-columns:minmax(0,1fr) !important;
+  }
+}
+
+</style>
 </head>
 <body>
 <nav>
